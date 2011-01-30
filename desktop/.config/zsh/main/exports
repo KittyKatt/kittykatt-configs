@@ -1,0 +1,4 @@
+export BROWSER=chromium
+export SCREENSERVE="$HOME/sshfs/archserver-served/served/screens"
+export MPD_HOST="lloth"
+export MPD_PORT="6600"

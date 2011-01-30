@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xchat --cfgdir=/home/kittykatt/.xchat2-sirc/ &
+sleep 2s && xchat &

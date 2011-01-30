@@ -1,0 +1,4 @@
+#!/bin/bash
+
+tint2 -c $XDG_CONFIG_HOME/tint2/tint2rc1.tint2rc &
+tint2 -c $XDG_CONFIG_HOME/tint2/tint2rc2.tint2rc &

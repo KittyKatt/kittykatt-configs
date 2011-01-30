@@ -1,0 +1,6 @@
+#SET AUR_MSG_0 up to date
+#SET AUR_MSG_1 1 new pkg
+#SET AUR_MSG_N %AUR_N% new pkgs
+#
+${alignr}${color1}%AUR_MSG%${color}${voffset 5}
+#%AUR_MSG%

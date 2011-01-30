@@ -1,0 +1,5 @@
+#SET MSG_0 up to date
+#SET MSG_1 1 new pkg
+#SET MSG_N %N% new pkgs
+#
+${alignr}${color1}%MSG%${color}

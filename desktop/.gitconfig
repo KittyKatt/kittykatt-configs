@@ -1,0 +1,5 @@
+[user]
+	name = Brett Bohnenkamper
+	email = kittykatt@archlinux.us
+[alias]
+	last = log -1 HEAD
