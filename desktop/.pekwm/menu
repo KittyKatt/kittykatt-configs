@@ -1,0 +1,237 @@
+# Menu config for pekwm
+
+# Variables
+INCLUDE = "vars"
+
+RootMenu = "Desktop" {
+	Entry = "Terminal" { Actions = "Exec $TERMINAL &" }
+	Entry = "Full Terminal" { Actions = "Exec $TERMINAL_FULL &" }
+	Entry = "Run.." { Actions = "ShowCmdDialog" }
+
+	Separator {}
+
+	Section { COMMAND = "/home/kittykatt/.pekwm/scripts/mounts.py" }
+
+	Submenu = "Home" {
+		Entry = "Documents" { Actions = "Dynamic $_HOME/.pekwm/pekwm_tools/pekwm_ls_menu -l1 -d -i /home/kittykatt/Documents/" }
+		Entry = "Downloads" { Actions = "Dynamic $_HOME/.pekwm/pekwm_tools/pekwm_ls_menu -l1 -d -i /home/kittykatt/Downloads/" }
+		Entry = "Pictures" { Actions = "Dynamic $_HOME/.pekwm/pekwm_tools/pekwm_ls_menu -l1 -d -i /home/kittykatt/Pictures/" }
+		Entry = "Projects" { Actions = "Dynamic $_HOME/.pekwm/pekwm_tools/pekwm_ls_menu -l1 -d -i /home/kittykatt/Projects/" }
+		Entry = "scripts" { Actions = "Dynamic $_HOME/.pekwm/pekwm_tools/pekwm_ls_menu -l1 -d -i /home/kittykatt/scripts/" }
+	}
+
+	Separator {}
+
+	Submenu = "Applications" {
+	Submenu = "Development" {
+		Entry = "Java Monitoring and Management Console" { Actions = "Exec jconsole &" }
+		Entry = "Java VisualVM" { Actions = "Exec jvisualvm &" }
+		Entry = "Qt Assistant" { Actions = "Exec assistant &" }
+		Entry = "Qt Designer" { Actions = "Exec designer &" }
+		Entry = "Qt Linguist" { Actions = "Exec linguist &" }
+	}
+	Submenu = "Editors" {
+		Entry = "gedit" { Actions = "Exec gedit &" }
+		Entry = "Mousepad" { Actions = "Exec mousepad &" }
+	}
+	Submenu = "Games" {
+		Submenu = "Arcade" {
+			Entry = "Nibbles" { Actions = "Exec gnibbles &" }
+			Entry = "Robots" { Actions = "Exec gnobots2 &" }
+		}
+		Submenu = "Board" {
+			Entry = "Iagno" { Actions = "Exec iagno &" }
+			Entry = "Mahjongg" { Actions = "Exec mahjongg &" }
+		}
+		Submenu = "Card" {
+			Entry = "AisleRiot Solitaire" { Actions = "Exec sol &" }
+			Entry = "Blackjack" { Actions = "Exec blackjack &" }
+			Entry = "FreeCell Solitaire" { Actions = "Exec sol --freecell &" }
+			Entry = "Tali" { Actions = "Exec gtali &" }
+		}
+		Submenu = "Puzzle" {
+			Entry = "Five or More" { Actions = "Exec glines &" }
+			Entry = "Four-in-a-Row" { Actions = "Exec gnect &" }
+			Entry = "Gnometris" { Actions = "Exec gnometris &" }
+			Entry = "Klotski" { Actions = "Exec gnotski &" }
+			Entry = "Mines" { Actions = "Exec gnomine &" }
+			Entry = "Same GNOME" { Actions = "Exec same-gnome &" }
+			Entry = "Sudoku" { Actions = "Exec gnome-sudoku &" }
+			Entry = "Tetravex" { Actions = "Exec gnotravex &" }
+		}
+		Entry = "Cube" { Actions = "Exec cube &" }
+		Entry = "QJoyPad" { Actions = "Exec qjoypad &" }
+	}
+	Submenu = "Graphics" {
+		Entry = "GNU Image Manipulation Program" { Actions = "Exec gimp-2.7 &" }
+		Entry = "Image Viewer" { Actions = "Exec gpicview &" }
+	}
+	Submenu = "Multimedia" {
+		Entry = "Audacity" { Actions = "Exec audacity &" }
+		Entry = "Cheese" { Actions = "Exec cheese &" }
+		Entry = "EasyTAG" { Actions = "Exec easytag &" }
+		Entry = "GNOME-MPlayer" { Actions = "Exec gnome-mplayer &" }
+		Entry = "Sound Recorder" { Actions = "Exec gnome-sound-recorder &" }
+		Entry = "Volume Control" { Actions = "Exec gnome-volume-control &" }
+		Entry = "Xfburn" { Actions = "Exec xfburn &" }
+	}
+	Submenu = "WWW" {
+		Entry = "Avahi SSH Server Browser" { Actions = "Exec bssh &" }
+		Entry = "Avahi VNC Server Browser" { Actions = "Exec bvnc &" }
+		Entry = "Chromium" { Actions = "Exec chromium &" }
+		Entry = "Deluge BitTorrent Client" { Actions = "Exec deluge-gtk &" }
+		Entry = "IRSSI" { Actions = "Exec $TERMINAL -title irssi -e irssi &" }
+		Entry = "Java Web Start" { Actions = "Exec javaws -viewer &" }
+		Entry = "Pidgin Internet Messenger" { Actions = "Exec pidgin &" }
+		Entry = "Skype" { Actions = "Exec skype &" }
+		Entry = "XChat IRC" { Actions = "Exec xchat &" }
+		Entry = "Wicd" { Actions = "Exec wicd-client &" }
+	}
+	Submenu = "Office" {
+		Entry = "ePDFViewer" { Actions = "Exec epdfview &" }
+		Entry = "OpenOffice.org 3.3" { Actions = "Exec soffice-dev &" }
+		Entry = "OpenOffice.org 3.3 Base" { Actions = "Exec soffice-dev -base &" }
+		Entry = "OpenOffice.org 3.3 Calc" { Actions = "Exec soffice-dev -calc &" }
+		Entry = "OpenOffice.org 3.3 Draw" { Actions = "Exec soffice-dev -draw &" }
+		Entry = "OpenOffice.org 3.3 Impress" { Actions = "Exec soffice-dev -impress &" }
+		Entry = "OpenOffice.org 3.3 Math" { Actions = "Exec soffice-dev -math &" }
+		Entry = "OpenOffice.org 3.3 Printer Administration" { Actions = "Exec spadmin-dev &" }
+		Entry = "OpenOffice.org 3.3 Writer" { Actions = "Exec soffice-dev -writer &" }
+	}
+	Submenu = "Utilities" {
+		Entry = "XCalc" { Actions = "Exec xcalc &" }
+		Entry = "XMan" { Actions = "Exec xman &" }
+		Entry = "Xpdf" { Actions = "Exec xpdf &" }
+		Entry = "Xarchiver" { Actions = "Exec xarchiver &" }
+	}
+	Submenu = "Other" {
+		Entry = "About GNOME" { Actions = "Exec gnome-about &" }
+	}
+	Submenu = "Shells" {
+		Entry = "mrxvt" { Actions = "Exec mrxvt &" }
+		Entry = "Root Terminal" { Actions = "Exec gksu -l gnome-terminal &" }
+		Entry = "Terminal" { Actions = "Exec gnome-terminal &" }
+		Entry = "Terminal" { Actions = "Exec Terminal &" }
+		Entry = "Thunar File Manager" { Actions = "Exec Thunar &" }
+	}
+	Submenu = "System" {
+		Submenu = "Settings" {
+			Submenu = "GNOME" {
+				Entry = "Privilege granting" { Actions = "Exec gksu-properties &" }
+			}
+			Submenu = "Xfce" {
+				Entry = "File Manager" { Actions = "Exec thunar-settings &" }
+				Entry = "Preferred Applications" { Actions = "Exec exo-preferred-applications &" }
+				Entry = "Removable Drives and Media" { Actions = "Exec /usr/lib/xfce4/thunar-volman-settings &" }
+			}
+			Entry = "Default Printer" { Actions = "Exec my-default-printer &" }
+			Entry = "Java Control Panel" { Actions = "Exec jcontrol &" }
+			Entry = "Java Policy Settings" { Actions = "Exec policytool &" }
+			Entry = "Manage Printing" { Actions = "Exec xdg-open http://localhost:631/ &" }
+			Entry = "Printing" { Actions = "Exec system-config-printer &" }
+			Entry = "Qt Config" { Actions = "Exec qtconfig &" }
+		}
+		Entry = "Avahi Zeroconf Browser" { Actions = "Exec avahi-discover &" }
+		Entry = "Bulk Rename" { Actions = "Exec /usr/lib/ThunarBulkRename &" }
+		Entry = "Disk Utility" { Actions = "Exec palimpsest &" }
+		Entry = "GParted" { Actions = "Exec gparted &" }
+		Entry = "Htop" { Actions = "Exec gnome-terminal -e htop &" }
+		Entry = "Task Manager" { Actions = "Exec lxtask &" }
+	}
+	}
+
+	Separator {}
+	
+	Submenu = "MPD" {
+		Entry { Actions = "Dynamic /home/kittykatt/.pekwm/scripts/mpd.py" }
+	}
+
+	Separator {}
+
+	Submenu = "Go to" {
+		SubMenu = "Workspace" {
+			# Create goto menu once per pekwm config reload. The fast way that
+			# will work for most if not all users.
+			COMMAND = "/usr/share/pekwm/scripts/pekwm_ws_menu.sh goto"
+			# Create goto menu every time the menu is opened. The slow way.
+			# This is what you want if you are using external tools to make
+			# the amount of workspaces something else than what you define in
+			# ~/.pekwm/config. You will know if you want this.
+			# Entry = "" { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_ws_menu.sh goto dynamic" }
+		}
+		Entry = "Window.." { Actions = "ShowMenu GotoClient True" }
+	}
+
+	Submenu = "Pekwm" {
+		Submenu = "+PekWM Themes" {
+			Submenu = "+ /usr/share/pekwm/themes/" {
+				Entry { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_themeset.sh /usr/share/pekwm/themes" }
+			}
+			Submenu = "+ ~/.pekwm/themes/" {
+				Entry { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_themeset.sh ~/.pekwm/themes" }
+			}
+		}
+		Submenu = "+GTK Themes" {
+			Entry = "#! Interface" { Actions = "Exec lxappearance &" }
+			Separator {}
+			Section = "GTK Themes" { COMMAND = "$_HOME/.pekwm/pekwm_tools/pekwm_gtk_menu -l -c" }
+		}
+		Submenu = "+Background" {
+			Section = "Images" { COMMAND = "$_HOME/.pekwm/pekwm_tools/pekwm_wp_menu -c $_HOME/.wallpapers/" }
+		}
+		Entry = "Reload" { Actions = "Reload" }
+		Entry = "Restart" { Actions = "Restart" }
+		Submenu = "Exit" {
+			Entry = "Xterm" { Actions = "RestartOther xterm" }
+			Entry = "TWM" { Actions = "RestartOther twm" }
+			Entry = "Exit" { Actions = "Exit" }
+		}
+	}
+}
+
+WindowMenu = "Window Menu" {
+	Entry = "(Un)Stick" { Actions = "Toggle Sticky" }
+	Entry = "(Un)Shade" { Actions = "Toggle Shaded" }
+	Entry = "Iconify" { Actions = "Set Iconified" }
+	Entry = "Command.." { Actions = "ShowCmdDialog" }
+
+	Submenu = "Maximize" {
+		Entry = "Toggle Full" { Actions = "Toggle Maximized True True" }
+		Entry = "Toggle Horizontal" { Actions = "Toggle Maximized True False" }
+		Entry = "Toggle Vertical" { Actions = "Toggle Maximized False True" }
+	}
+	Submenu = "Fill" {
+		Entry = "Full" { Actions = "MaxFill True True" }
+		Entry = "Horizontal" { Actions = "MaxFill True False" }
+		Entry = "Vertical" { Actions = "MaxFill False True" }
+	}
+	Submenu = "Stacking" {
+		Entry = "Raise" { Actions = "Raise" }
+		Entry = "Lower" { Actions = "Lower" }
+		Entry = "Toggle Always On Top" { Actions = "Toggle AlwaysOnTop" }
+		Entry = "Toggle Always Below" { Actions = "Toggle AlwaysBelow" }
+	}
+	Submenu = "Decorations" {
+		Entry = "Toggle Decorations" { Actions = "Toggle DecorBorder; Toggle DecorTitlebar" }
+		Entry = "Toggle Borders" { Actions = "Toggle DecorBorder" }
+		Entry = "Toggle Titlebar" { Actions = "Toggle DecorTitlebar" }
+	}
+	Submenu = "Skip" {
+		Entry = "Toggle showing this frame in menus" { Actions = "Toggle Skip Menus" }
+		Entry = "Toggle including this frame in focus toggle" { Actions = "Toggle Skip FocusToggle" }
+		Entry = "Toggle if this frame snaps to other windows" { Actions = "Toggle Skip Snap" }
+	}
+	SubMenu = "Send To" {
+		# Create sendto menu once per pekwm config reload. The fast way that
+		# will work for most if not all users.
+		COMMAND = "/usr/share/pekwm/scripts/pekwm_ws_menu.sh send"
+		# Create sendto menu every time the menu is opened. The slow way.
+		# This is what you want if you are using external tools to make
+		# the amount of workspaces something else than what you define in
+		# ~/.pekwm/config. You will know if you want this.
+		# Entry = "" { Actions = "Dynamic /usr/share/pekwm/scripts/pekwm_ws_menu.sh send dynamic" }
+	}
+	Separator {}
+	Entry = "Close" { Actions = "Close" }
+	Submenu = "Kill" { Entry = "Kill application" { Actions = "Kill" } }
+}

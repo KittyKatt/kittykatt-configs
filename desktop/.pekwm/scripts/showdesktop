@@ -1,0 +1,9 @@
+#!/bin/bash
+
+current="$(wmctrl -d | awk '/\*/ {print $1}')"
+currentopen="$(wmctrl -l | awk -v "curr=$current" 'curr==$2')"
+opennames="$(echo "$currentopen" | awk '{for (i=4; i <= NF; i++) printf("%s%c", $i, (i==NF)?ORS:OFS)}')"
+
+while read -r line; do
+  wmctrl -r "$line" -b toggle,hidden
+done <<< "$opennames"

@@ -1,0 +1,6 @@
+#!/bin/bash
+propstring () {
+  echo -n 'Property '
+  xprop WM_CLASS | sed 's/.*"\(.*\)", "\(.*\)".*/= "\1,\2" {/g'
+  echo '}'
+}
