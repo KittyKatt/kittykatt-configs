@@ -1,0 +1,131 @@
+# conky configuration
+# edited by Mark Buck (Kaivalagi) <m_buck@hotmail.com>
+
+# set to yes if you want Conky to be forked in the background
+background yes
+
+# X font when Xft is disabled, you can pick one with program xfontsel
+#font 5x7
+#font 6x10
+#font 7x13
+#font 8x13
+#font 9x15
+#font *mintsmild.se*
+#font -*-*-*-*-*-*-34-*-*-*-*-*-*-*
+
+# Use Xft?
+use_xft yes
+
+# Xft font when Xft is enabled
+xftfont Bitstream Vera Sans Mono:size=9
+
+# Text alpha when using Xft
+xftalpha 0.8
+
+# Update interval in seconds
+update_interval 1.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 300 0
+maximum_width 300
+
+# Draw shades?
+draw_shades yes
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+draw_graph_borders yes
+
+# Stippled borders?
+stippled_borders 8
+
+# border margins
+border_inner_margin 4
+
+# border width
+border_width 1
+
+# own window options
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 10
+gap_y 50
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer right
+
+# Default colors and also border colors
+default_color white
+default_shade_color black
+default_outline_color white
+# colours
+color1 778899 # LightSlateGrey
+color2 6892C6 # LightBlue
+color3 3465A4 # Blue
+color4 78BF39 # Green
+color5 FFDEAD # NavajoWhite
+
+text_buffer_size 2048
+
+# variable is given either in format $variable or in ${variable}. Latter
+# allows characters right after the variable and must be used in network
+# stuff because of an argument
+
+# stuff after 'TEXT' will be formatted on screen
+
+TEXT
+${offset -5}${color3}${font StyleBats:style=Bold:size=12}q ${voffset -2}${color}${font Bitstream Vera Sans Mono:style=Bold:size=11}Weather${font}  ${hr}${color1}
+${goto 10}${color5}${font Bitstream Vera Sans Mono:style=Bold:size=14}${execi 1800 conkyForecast --location=USMO0413 --datatype=CT}${font}${color}
+${voffset 5}${goto 10}${font ConkyWeather:style=Bold:size=40}${execi 1800 conkyForecast --location=USMO0413 --datatype=WF}${voffset -5}${goto 110}${font ConkyWindNESW:size=40}${execi 1800 conkyForecast --location=USMO0413 --datatype=BS}${goto 210}${voffset -5}${font moon phases:size=35}${execi 1800 conkyForecast --location=USMO0413 --datatype=MF}${font}
+${voffset 5}${goto 20}${color5}${execi 1800 conkyForecast --location=USMO0413 --datatype=HT --hideunits} / ${execi 1800 conkyForecast --location=USMO0413 --datatype=LT --hideunits}${goto 100}${execi 1800 conkyForecast --location=USMO0413 --datatype=WS --imperial} - ${execi 1800 conkyForecast --location=USMO0413 --datatype=WD}${goto 200}${execi 1800 conkyForecast --location=USMO0413 --datatype=MP}${color}
+${voffset 10}${goto 10}${color3}Station:${color5}${goto 100}${execi 1800 conkyForecast --location=USMO0413 --datatype=OB}
+${goto 10}${color3}Rain:${color5}${goto 100}${execi 1800 conkyForecast --location=USMO0413 --datatype=PC}
+${goto 10}${color3}UV:${color5}${goto 100}${execi 1800 conkyForecast --location=USMO0413 --datatype=UI} - ${execi 1800 conkyForecast --location=USMO0413 --datatype=UT}
+${goto 10}${color3}Humidity:${color5}${goto 100}${execi 1800 conkyForecast --location=USMO0413 --datatype=HM}
+${goto 10}${color3}Dew Point:${color5}${goto 100}${execi 1800 conkyForecast --location=USMO0413 --datatype=DP}
+${goto 10}${color3}Bar:${color5}${goto 100}${execi 1800 conkyForecast --location=USMO0413 --datatype=BR} - ${execi 1800 conkyForecast --location=USMO0413 --datatype=BD}
+${goto 10}${color3}Sunrise/Set:${color5}${goto 100}${execi 1800 conkyForecast --location=USMO0413 --datatype=SR} / ${execi 1800 conkyForecast --location=USMO0413 --datatype=SS}
+${goto 10}${color3}${exec conkyForecast-SunsetSunriseCountdown --location=USMO0413 -t} in:${color5}${goto 100}${exec conkyForecast-SunsetSunriseCountdown --location=USMO0413 -L}${color}
+${voffset 10}${goto 25}${color5}${execi 1800 conkyForecast --location=USMO0413 --datatype=DW --startday=1 --shortweekday}${goto 100}${execi 1800 conkyForecast --location=USMO0413 --datatype=DW --startday=2 --shortweekday}${goto 175}${execi 1800 conkyForecast --location=USMO0413 --datatype=DW --startday=3 --shortweekday}${goto 250}${execi 1800 conkyForecast --location=USMO0413 --datatype=DW --startday=4 --shortweekday}${color}
+${voffset 5}${goto 13}${font ConkyWeather:size=32}${execi 1800 conkyForecast --location=USMO0413 --datatype=WF --startday=1 --endday=4 --spaces=4}${font}
+${voffset 5}${goto 15}${color5}${execi 1800 conkyForecast --location=USMO0413 --datatype=HT --startday=1 --hideunits --centeredwidth=3}/${execi 1800 conkyForecast --location=USMO0413 --datatype=LT --startday=1 --hideunits --centeredwidth=3}${goto 90}${execi 1800 conkyForecast --location=USMO0413 --datatype=HT --startday=2 --hideunits --centeredwidth=3}/${execi 1800 conkyForecast --location=USMO0413 --datatype=LT --startday=2 --hideunits --centeredwidth=3}${goto 170}${execi 1800 conkyForecast --location=USMO0413 --datatype=HT --startday=3 --hideunits --centeredwidth=3}/${execi 1800 conkyForecast --location=USMO0413 --datatype=LT --startday=3 --hideunits --centeredwidth=3}${goto 245}${execi 1800 conkyForecast --location=USMO0413 --datatype=HT --startday=4 --hideunits --centeredwidth=3}/${execi 1800 conkyForecast --location=USMO0413 --datatype=LT --startday=4 --hideunits --centeredwidth=3}${color}
+${color3}${font Bitstream Vera Sans Mono:size=7}${alignr 20}Last Update: ${execi 1800 conkyForecast --location=USMO0413 --datatype=LU}${font}${color}
+
