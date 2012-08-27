@@ -1,0 +1,6 @@
+#!/bin/bash
+while true
+do
+ mpc idle
+ mpc status >/srv/http/blog/status.txt
+done

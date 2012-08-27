@@ -1,0 +1,4 @@
+#!/bin/bash
+
+screen -dmS servedkatt python2 /home/kittykatt/irc/bots/supy-servedkatt/bin/supybot /home/kittykatt/irc/bots/supy-servedkatt/ServedKatt.conf
+screen -dmS randomzbot python2 /home/kittykatt/irc/bots/supy-randomzbot/scripts/supybot /home/kittykatt/irc/bots/supy-randomzbot/randomzbot.conf

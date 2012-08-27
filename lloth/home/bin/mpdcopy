@@ -1,0 +1,11 @@
+#!/bin/bash
+
+musicdir="/media/extra/lapbackup/home/kittykatt/.mpd/music"
+destdir="/srv/http/served/personal/music/"
+
+currentfile=$(mpc --format '%file%' | head -n 1)
+
+echo -e "\e[1;32m :: Copying the current song now... \e[0m"
+cp "$musicdir/$currentfile" "$destdir"
+echo -e "\e[1;32m :: Done! \e[0m"
+

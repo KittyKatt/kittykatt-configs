@@ -1,0 +1,8 @@
+#!/bin/bash
+
+songname=$(mpc --format="%file%" | head -1)
+
+songmodded=$(echo "$songname" | sed s/\'//g | sed 's/ /_/g' | sed 's/-//g')
+
+cp "/media/extra/lapbackup/home/kittykatt/.mpd/music/${songname}" /home/kittykatt/Misc/mysongs/
+mv "/home/kittykatt/Misc/mysongs/${songname}" /home/kittykatt/Misc/mysongs/${songmodded}

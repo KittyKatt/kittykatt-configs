@@ -1,0 +1,10 @@
+#!/bin/bash
+
+imgformat="$1"
+newsize="$2"
+
+for i in *.${imgformat}; do
+	newfile=$(echo $i | sed s/.$imgformat/-0.$imgformat/)
+	echo "Converting $i to ${newsize}..."
+	convert -resize $newsize $i $newfile
+done

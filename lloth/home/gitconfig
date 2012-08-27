@@ -1,0 +1,10 @@
+[user]
+	name = Brett Bohnenkamper
+	email = kittykatt@archlinux.us
+[core]
+	editor = nano
+[color]
+	ui = true
+[alias]
+	updatehooks = !sudo -u git cp /srv/repos/public/repositories/gitreport.git/hooks/{post-receive,update} ./hooks/
+	updatehooks-priv = !sudo -u sirc cp /srv/repos/public/repositories/gitreport.git/hooks/{post-receive,update} ./hooks/
