@@ -1,0 +1,299 @@
+# Drakfire - Port of Drakfire by Drakfire86 at deviantART
+# License: Creative Commons Noncommercial-Share Alike
+# Author: Murder's Last Crow
+# DeviantART profile: http://murderslastcrow.deviantart.com/
+# Theme was tested with PekWM 0.1.11
+
+$FONT = "XFT#Sans:size=9#Left"
+$FONT_TITLE = "XFT#Sans:size=8:bold#Center"
+$MENU_TITLE = "XFT#Sans:size=8:bold#Center"
+
+Require {
+  Templates = "True"
+}
+
+Define = "BaseDecor" {
+  Height = "20"
+
+  # Increase first number to bring title text downwards
+  Pad = "4 5 65 0"
+
+  Focused = "Image title-active.png#Scaled"
+  Unfocused = "Image title.png"
+
+  Tab {
+    Focused = "Empty"
+    FocusedSelected = "Empty"
+    Unfocused = "Empty"
+    UnfocusedSelected = "Empty"
+  }
+  Separator {
+    Focused = "Empty"
+    Unfocused = "Empty"
+  }
+  Font {
+    Focused = "$FONT_TITLE"
+  }
+  FontColor {
+    Focused = "#666666"
+    FocusedSelected = "#CCCCCC"
+    Unfocused = "#666666"
+    UnfocusedSelected = "#666666"
+  }
+  Border {
+    Focused {
+      TopLeft = "Image top-left.png"
+      Top = "Image top-border.png"
+      TopRight = "Image top-right.png"
+      Left =  "Image border-left.png"
+      Right = "Image border-right.png"
+      BottomLeft = "Image bottom-left.png"
+      Bottom = "Image bottom-border.png"
+      BottomRight = "Image bottom-right.png"
+    }
+    Unfocused {
+      TopLeft = "Image top-left.png"
+      Top = "Image top-border.png"
+      TopRight = "Image top-right.png"
+      Left =  "Image border-left.png"
+      Right = "Image border-right.png"
+      BottomLeft = "Image bottom-left.png"
+      Bottom = "Image bottom-border.png"
+      BottomRight = "Image bottom-right.png"
+    }
+  }
+}
+
+Define = "BaseButtons" {
+  Buttons {
+    Right = "Close" {
+      Focused = "Image close.png"
+      Unfocused = "Image close-unfocus.png"
+      Hoover = "Image close-hover.png"
+      Pressed = "Image close-press.png"
+      Button = "1" { Actions = "Close" }
+      Button = "3" { Actions = "Kill" }
+    }
+
+    Right = "Maximize" {
+      Focused = "Image max.png"
+      Unfocused = "Image max-unfocus.png"
+      Hoover = "Image max-hover.png"
+      Pressed = "Image max-press.png"
+      Button = "1" { Actions = "Toggle Maximized 1 1" }
+#      Button = "1" { Actions = "Unset DecorBorder; Set Maximized" }
+#      Button = "3" { Actions = "Set DecorBorder; Unset Maximized" }
+    }
+
+    Right = "Iconify" {
+      Focused = "Image min.png"
+      Unfocused = "Image min-unfocus.png"
+      Hoover = "Image min-hover.png"
+      Pressed = "Image min-press.png"
+      Button = "1" { Actions = "Set Iconified" }
+    }
+
+    Left = "Shade" {
+      Focused = "Image shade.png"
+      Unfocused = "Image shade.png"
+      Hoover = "Image shade.png"
+      Pressed = "Image shade.png"
+      Button = "1" { Actions = "Toggle Shaded" }
+    }
+      
+  }
+}
+
+Define = "MenuDecor" {
+  Height = "22"
+
+  # Increase first number to bring title text downwards
+  Pad = "4 0 0 0"
+
+  Focused = "Image title.png"
+  Unfocused = "Image title.png"
+
+  Tab {
+    Focused = "Empty"
+    FocusedSelected = "Empty"
+    Unfocused = "Empty"
+    UnfocusedSelected = "Empty"
+  }
+  Separator {
+    Focused = "Empty"
+    Unfocused = "Empty"
+  }
+  Font {
+    Focused = "$MENU_TITLE"
+  }
+  FontColor {
+    Focused = "#666666"
+    FocusedSelected = "#CCCCCC"
+    Unfocused = "#666666"
+    UnfocusedSelected = "#666666"
+  }
+  Border {
+    Focused {
+      TopLeft = "Image menu-top-corner.png"
+      Top = "Image top-border.png"
+      TopRight = "Image menu-top-corner.png"
+      Left =  "Image menu-border.png"
+      Right = "Image menu-border.png"
+      BottomLeft = "Image menu-bottom-corner.png"
+      Bottom = "Image menu-bottom.png"
+      BottomRight = "Image menu-bottom-corner.png"
+    }
+    Unfocused {
+      TopLeft = "Image menu-top-corner.png"
+      Top = "Image top-border.png"
+      TopRight = "Image menu-top-corner.png"
+      Left =  "Image menu-border.png"
+      Right = "Image menu-border.png"
+      BottomLeft = "Image menu-bottom-corner.png"
+      Bottom = "Image menu-bottom.png"
+      BottomRight = "Image menu-bottom-corner.png"
+    }
+  }
+}
+
+Define = "EmptyDecor" {
+  Focused = "Empty"
+  Unfocused = "Empty"
+  }
+
+  Tab {
+    Focused = "Empty"
+    FocusedSelected = "Empty"
+    Unfocused = "Empty"
+    UnfocusedSelected = "Empty"
+  }
+
+  Separator {
+    Focused = "Empty"
+    Unfocused = "Empty"
+  }
+
+  Font {
+    Focused = "Empty"
+  }
+
+  FontColor {
+    Focused = "Empty"
+    FocusedSelected = "Empty"
+    Unfocused = "Empty"
+    UnfocusedSelected = "Empty"
+  }    
+
+  Border {
+    Focused {
+      TopLeft = "Empty"
+      Top = "Empty"
+      TopRight = "Empty"
+      Left =  "Empty"
+      Right = "Empty"
+      BottomLeft = "Empty"
+      Bottom = "Empty"
+      BottomRight = "Empty"
+    }
+    Unfocused {
+      TopLeft = "Empty"
+      Top = "Empty"
+      TopRight = "Empty"
+      Left =  "Empty"
+      Right = "Empty"
+      BottomLeft = "Empty"
+      Bottom = "Empty"
+      BottomRight = "Empty"
+    }
+  }
+}
+
+PDecor {
+  Decor = "Default" {
+    Title {
+      @BaseDecor
+      @BaseButtons
+    }
+  }
+
+  Decor = "Menu" {
+    Title {
+      @MenuDecor
+    }
+  }
+  
+  Decor = "WorkspaceIndicator" {
+    Title {
+      @MenuDecor
+    }
+  }
+
+  Decor = "Titlebarless" {
+    Title {
+      @EmptyDecor
+    }
+  }
+
+  Decor = "Statuswindow" {
+    Title {
+      @EmptyDecor
+    }
+  }
+}
+
+Harbour {
+  Texture = "Solid #2d2d2d"
+}
+
+Menu {
+  Pad = "0 0 4 4" 
+
+  Focused {
+    Font = "$FONT"
+    Background = "Solid #2d2d2d"
+    Item = "Solid #2d2d2d"
+    Text = "#CCCCCC" 
+    Separator = "Image menuline.png#Scaled"
+    Arrow = "Image arrow.png"
+  }
+  Unfocused {
+    Font = "$FONT"
+    Background = "Solid #2d2d2d"
+    Item = "Solid #2d2d2d"
+    Text = "#CCCCCC"
+    Separator = "Image menuline.png#Scaled"
+    Arrow = "Image arrow.png"
+  }
+  Selected {
+    Font = "$FONT"
+    Background = "Solid #2d2d2d"
+    Item = "Solid #2d2d2d"
+    Text = "#ffffff"
+    Arrow = "Image arrow_focus.png"
+  }
+}
+
+CmdDialog {
+  Font = "$FONT"
+  Texture = "Solid #2d2d2d"
+  Text = "#000000"
+  Pad = "3 0 1 10"
+}
+
+Status {
+  Font = "$FONT"
+  Texture = "Solid #2d2d2d"
+  Text = "#ffffff"
+  Pad = "2 2 10 10"
+}
+
+WorkspaceIndicator {
+  Font = "$FONT_TITLE"
+  Background = "Solid #2d2d2d"
+  Workspace = "Solid #2d2d2d"
+  WorkspaceActive = "Solid #CCCCCC"
+  Text = "#ffffff"
+  EdgePadding = "0"
+  WorkspacePadding = "0"
+}
+

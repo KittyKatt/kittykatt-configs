@@ -1,0 +1,422 @@
+#==============================================================
+#
+# GLOBAL VARIABLES ============================================
+
+# Infos
+# Dark End Gradient = #151516
+# Light End Gradient = #191818
+
+$font = "cure-7Left#XFT"
+$menufont = "cure-8Left#XFT"
+
+$bgcolor = "#151515"
+$fontcolor = "#777777"
+$hilitecolor = "#2873a2"
+
+# WINDOW BORDERS ==============================================
+
+PDecor {
+	Decor = "Default" {
+		# Titlebar
+		Title {
+			Height = "18"
+			Pad = "5 5 5 5"
+
+			Focused = "IMAGE title_new.png"
+			Unfocused = "IMAGE title_new.png"
+
+			# Titlebar Tabs
+			Tab {
+				Focused = "IMAGE title_new.png"
+				FocusedSelected = "IMAGE title_new.png"
+				Unfocused = "IMAGE title_new.png"
+				UnfocusedSelected = "IMAGE title_new.png"
+			}
+
+			Separator {
+				Focused = "Empty"
+				Unfocused = "Empty"
+			}
+
+			Font {
+				Focused	 = "$font"
+			}
+
+			FontColor {
+				Focused = "$hilitecolor"
+				FocusedSelected = "$hilitecolor"
+				Unfocused = "$fontcolor"
+				UnfocusedSelected = "$fontcolor"
+			}
+
+			# Titlebar Buttons
+			Buttons {
+				# Close
+				Right {
+					Focused = "IMAGE button_close_new.png"
+					Unfocused = "IMAGE button_close_new.png"
+					Hover = "IMAGE button_close_focus_new.png"
+					Pressed = "IMAGE button_close_focus_new.png"
+					Button = "1" { Actions = "Close" }
+					Button = "3" { Actions = "Kill" }
+				}
+
+				# Maximize
+				Right {
+					Focused = "IMAGE button_max_new.png"
+					Unfocused = "IMAGE button_max_new.png"
+					Hover = "IMAGE button_max_focus_new.png"
+					Pressed = "IMAGE button_max_focus_new.png"
+					Button = "1" { Actions = "Toggle Maximized 1 1" }
+				}
+
+				# Minimize
+				Right {
+					Focused = "IMAGE button_min_new.png"
+					Unfocused = "IMAGE button_min_new.png"
+					Hover = "IMAGE button_min_focus_new.png"
+					Pressed = "IMAGE button_min_focus_new.png"
+					Button = "1" { Actions = "Set Iconified" }
+				}
+			}
+			
+			# Window Border
+			Border {
+
+				# Active Window
+				Focused {
+					TopLeft = "IMAGE top-left.png"
+					Top = "IMAGE top-border.png"
+					# Top =  "IMAGE top-border.png"
+					TopRight = "IMAGE top-right.png"
+					# Left =  "SOLID #090909 1x1"
+					Left =  "IMAGE left-border.png"
+					# Right = "SOLID #090909 1x1"
+					Right = "IMAGE right-border.png"
+					BottomLeft = "IMAGE bottom-left-new.png"
+					# Bottom = "SOLID #090909 1x1"
+					Bottom = "IMAGE bottom-border.png"
+					BottomRight = "IMAGE bottom-right.png"
+				}
+
+				# Inactive Window
+				Unfocused {
+					TopLeft = "IMAGE top-left.png"
+					Top = "IMAGE top-border.png"
+					# Top =  "IMAGE top-border.png"
+					TopRight = "IMAGE top-right.png"
+					# Left =  "SOLID #090909 1x1"
+					Left =  "IMAGE left-border.png"
+					# Right = "SOLID #090909 1x1"
+					Right = "IMAGE right-border.png"
+					BottomLeft = "IMAGE bottom-left-new.png"
+					# Bottom = "SOLID #090909 1x1"
+					Bottom = "IMAGE bottom-border.png"
+					BottomRight = "IMAGE bottom-right.png"
+				}
+			}
+		}
+	}
+
+# MENU ========================================================
+
+	Decor = "Menu" {
+		Title {
+			Height = "0"
+			Pad = "0 3 0 0"
+    
+			Focused = "Empty"
+			Unfocused = "Empty"
+
+			Tab {
+				Focused = "Empty"
+				FocusedSelected = "Empty"
+				Unfocused = "Empty"
+				UnfocusedSelected = "Empty"  
+			}
+
+			Separator {
+				Focused = "Empty"
+				Unfocused = "Empty"
+			}			 
+				
+			Font {
+				Focused = "$font"
+			}
+				
+			FontColor {
+				Focused = "Empty"
+				FocusedSelected = "Empty"  
+				Unfocused = "Empty"
+				UnfocusedSelected = "Empty" 
+			}
+				
+			Buttons {
+			}
+			
+			Border {
+				Focused {
+					TopLeft = "IMAGE menu-topleft.png"
+					Top = "IMAGE menu-title.png"
+					TopRight = "IMAGE menu-topright.png"
+					Left =  "SOLID #090909 1x1"
+					Right = "SOLID #090909 1x1"
+					BottomLeft = "IMAGE menu-bottomleft.png"
+					Bottom = "IMAGE menu-bottom.png"
+					BottomRight = "IMAGE menu-bottomright.png"
+				}
+				
+				Unfocused {
+					TopLeft = "IMAGE menu-topleft.png"
+					Top = "IMAGE menu-title.png"
+					TopRight = "IMAGE menu-topright.png"
+					Left =  "SOLID #090909 1x1"
+					Right = "SOLID #090909 1x1"
+					BottomLeft = "IMAGE menu-bottomleft.png"
+					Bottom = "IMAGE menu-bottom.png"
+					BottomRight = "IMAGE menu-bottomright.png"
+				}
+			}
+		}   
+	}
+
+	Decor = "Titlebarless" {
+		Title {
+			Focused = "Empty"
+			Unfocused = "Empty"
+
+			Tab {
+				Focused = "Empty"
+				FocusedSelected = "Empty"
+				Unfocused = "Empty"
+				UnfocusedSelected = "Empty"
+			}
+
+			Separator {
+				Focused = "Empty"
+				Unfocused = "Empty"
+			}
+			
+			Font {
+				Focused = "Empty"
+			}
+			
+			FontColor {
+				Focused = "Empty"
+				FocusedSelected = "Empty"
+				Unfocused = "Empty"
+				UnfocusedSelected = "Empty"
+			}    
+    
+			Border {
+				Focused {
+					TopLeft = "Empty"
+					Top = "Empty"
+					TopRight = "Empty"
+					Left =  "Empty"
+					Right = "Empty"
+					BottomLeft = "Empty"
+					Bottom = "Empty"
+					BottomRight = "Empty"
+				}
+				
+				Unfocused {
+					TopLeft = "Empty"					 
+					Top = "Empty"					 
+					TopRight = "Empty"					 
+					Left =  "Empty"					 
+					Right = "Empty"					 
+					BottomLeft = "Empty"					 
+					Bottom = "Empty"					 
+					BottomRight = "Empty"
+				}
+			}
+		}
+	}
+
+	Decor = "Statuswindow" {
+		Title {
+			Height = "0"
+			Pad = "0 0 0 0"
+
+			Focused = "Empty"
+			Unfocused = "Empty"
+  
+			Tab {
+				Focused = "Empty"
+				FocusedSelected = "Empty"
+				Unfocused = "Empty"
+				UnfocusedSelected = "Empty"
+			}
+			
+			Separator {
+				Focused = "Empty"
+				Unfocused = "Empty"
+			}
+			
+			Font {
+				Focused = "Empty"
+			}
+			
+			FontColor {
+				Focused = "Empty"
+				FocusedSelected = "Empty"
+				Unfocused = "Empty"
+				UnfocusedSelected = "Empty"
+			}
+			
+			Buttons {
+			}
+			
+			Border {  
+				Focused {
+					TopLeft = "Empty"
+					Top = "Empty"
+					TopRight = "Empty"
+					Left =  "Empty"
+					Right = "Empty"
+					BottomLeft = "Empty"
+					Bottom = "Empty"
+					BottomRight = "Empty"
+				}
+			
+				Unfocused {
+					TopLeft = "Empty"
+					Top = "Empty"
+					TopRight = "Empty"
+					Left = "Empty"
+					Right = "Empty"
+					BottomLeft = "Empty"
+					Bottom = "Empty"
+					BottomRight = "Empty"
+				}
+			}
+		}
+	}
+
+	Decor = "WORKSPACEINDICATOR" {
+		Title {
+			
+			Height = "0"
+			Pad = "0 0 0 0"
+		
+			Focused = "Empty"
+			Unfocused = "Empty"
+
+			Tab {
+				Focused = "Empty"
+				FocusedSelected = "Empty"
+				Unfocused = "Empty"
+				UnfocusedSelected = "Empty" 
+			}
+			
+			Separator {
+				Focused = "Empty"
+				Unfocused = "Empty"
+			}    
+	        
+			Font {
+				Focused = "$font"
+			}
+
+			FontColor {
+				Focused = "Empty"
+				FocusedSelected = "Empty" 
+				Unfocused = "Empty"
+				UnfocusedSelected = "Empty" 
+			}
+	        
+			Buttons {
+			}
+			
+			Border {
+				Focused {
+					TopLeft = "IMAGE menu-topleft.png"
+					Top = "IMAGE menu-title.png"
+					TopRight = "IMAGE menu-topright.png"
+					Left =  "SOLID #090909 1x1"
+					Right = "SOLID #090909 1x1"
+					BottomLeft = "IMAGE menu-bottomleft.png"
+					Bottom = "IMAGE menu-bottom.png"
+					BottomRight = "IMAGE menu-bottomright.png"
+				}
+				
+				Unfocused {
+					TopLeft = "IMAGE menu-topleft.png"
+					Top = "IMAGE menu-title.png"
+					TopRight = "IMAGE menu-topright.png"
+					Left =  "SOLID #090909 1x1"
+					Right = "SOLID #090909 1x1"
+					BottomLeft = "IMAGE menu-bottomleft.png"
+					Bottom = "IMAGE menu-bottom.png"
+					BottomRight = "IMAGE menu-bottomright.png"
+				}
+			}		
+		}
+	}	
+}
+
+Harbour {
+	Texture = "Solid $bgcolor"
+}
+
+# MENU ========================================================
+
+Menu {
+	Pad = "1 1 5 2" 
+
+	Focused {
+		Font = "$menufont"
+		Background = "Solid $bgcolor"
+		Item = "Empty"
+		Text = "$fontcolor" 
+		Separator = "IMAGE menuline.png#Scaled"
+		Arrow = "Empty"
+	}
+
+	Unfocused {
+		Font = "$menufont"
+		Background = "Solid $bgcolor"
+		Item = "Empty"
+		Text = "$fontcolor"
+		Separator = "IMAGE menuline.png#Scaled"
+		Arrow = "Empty"
+	}
+  
+	Selected {
+		Font = "$menufont"
+		Background = "Solid #151515"
+		Item = "Empty"
+		Text = "$hilitecolor"
+		# Arrow = "IMAGE arrow.png"
+		Arrow = "Empty"
+	}
+}
+
+# CMD WINDOW ==================================================
+
+CmdDialog {
+	Font = "$menufont"
+	Texture = "Solid $bgcolor"
+	Text = "#707070"
+	Pad = "3 0 1 10"
+}
+
+Status {
+	Font = "$menufont"
+	Texture = "Solid $bgcolor"  
+	Text = "$hilitecolor"
+	Pad = "2 2 10 10"
+}
+
+# WORKSPACE WINDOW ============================================
+
+WorkspaceIndicator {
+	Font = "$menufont"
+	Background = "Solid $bgcolor"
+	Workspace = "Solidraised $bgcolor #212121 #212121"
+	WorkspaceActive = "Solidraised $bgcolor $hilitecolor $hilitecolor"
+	WorkspacePadding = "4"
+	EdgePadding = "4"
+	Text = "$hilitecolor"
+}

@@ -1,0 +1,106 @@
+#=================================#
+#||                             ||#
+#||  N C M P C P P  C O N F I G ||#
+#||                             ||#
+#=================================#
+##
+##### connection settings #####
+## set it in order to make tag editor and renaming files work properly
+mpd_host = "lloth"
+mpd_port = "6600"
+mpd_music_dir = "/media/extra/servermusic/music/"
+mpd_connection_timeout = "5"
+mpd_crossfade_time = "1"
+mpd_communication_mode = "notifications" (polling/notifications)
+##### music visualizer #####
+##
+## Note: In order to make music visualizer work you'll
+## need to use mpd fifo output, whose format parameter
+## has to be set to 44100:16:1. Example configuration:
+## (it has to be put into mpd.conf)
+##
+## audio_output {
+##        type            "fifo"
+##        name            "my fifo"
+##        path            "/tmp/mpd.fifo"
+##        format          "44100:16:1"
+## }
+##
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "1"
+visualizer_type = "wave" (spectrum/wave)
+##### system encoding #####
+##
+## ncmpcpp should detect your charset encoding
+## but if it failed to do so, you can specify
+## charset encoding you are using here.
+##
+## Note: You can see whether your ncmpcpp build
+## supports charset detection by checking output
+## of `ncmpcpp --version`.
+##
+## Note: Since MPD uses utf8 by default, setting
+## this option makes sense only if your encoding
+## is different.
+##
+system_encoding = "utf-8"
+##### delays #####
+## delay after playlist highlighting will be disabled (0 = don't disable)
+playlist_disable_highlight_delay = "5"
+## defines how long various messages are supposed to be visible
+message_delay_time = "4"
+
+# Playlist
+#song_columns_list_format = "(6f)[cyan]{l} (40)[default]{t|f} (25)[red]{a} (30)[blue]{b}"
+song_columns_list_format = "(7f)[cyan]{l} (25)[blue]{a} (40)[red]{t|f} (30)[magenta]{b}"
+song_list_format = "{$3[%l]$9} {$5%a$9} - {$2%t$9} - {$6%f$9}"
+now_playing_prefix = "$b$1» "
+now_playing_suffix = "$/b"
+#song_columns_list_format = "$L(9)[white]{l} (20)[red]{a} (30)[green]{b}$R(20)[cyan]{t}"
+playlist_display_mode = "columns" (classic/columns)
+autocenter_mode = "yes"
+centered_cursor = "yes"
+cyclic_scrolling = "yes"
+mouse_list_scroll_whole_page = "no"
+#song_list_format = "{$8$9}{[%l] >> }{%t }$R{%a - %b}"
+#song_list_format = " $5%l $1║{$7 %a $1│$2 %t$1 $R $3%b$1 }|{$6 %f $1}"
+#song_list_format = " $8%l $1│{$7 %a $1│$6 %t }|{$6 %f }$1 $R $1%b$1"
+#
+# song_library_format = "{%n > }{%t}|{%f}"
+#
+# # Bars
+song_status_format = "{%a - }{%t - }{%b}"
+#progressbar_look = "|> "
+progressbar_look = "─╼ "
+#progressbar_look = "░█ "
+titles_visibility = "no"
+header_visibility = "no"
+#statusbar_visibility = "no" 
+statusbar_visibility = "yes"
+
+# Browser
+browser_playlist_prefix = "$2plist »$9 "
+browser_display_mode = "classic" (classic/columns)
+
+# Colors
+discard_colors_if_item_is_selected = "yes"
+header_window_color = "default"
+volume_color = "cyan"
+state_line_color = "white"
+state_flags_color = "green"
+main_window_color = "default"
+color1 = "cyan"
+color2 = "black"
+main_window_highlight_color = "red"
+progressbar_color = "cyan"
+statusbar_color = "white"
+active_column_color = "red"
+visualizer_color = "cyan"
+
+# Others
+song_window_title_format = "MPD: {%a > }{%t}|{%f}"
+search_engine_display_mode = "columns" (classic/columns)
+follow_now_playing_lyrics = "yes"
+display_screens_numbers_on_start = "no"
+user_interface = "alternative" (classic/alternative)

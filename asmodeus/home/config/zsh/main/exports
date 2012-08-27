@@ -1,0 +1,9 @@
+# export BROWSER=midori
+export BROWSER="google-chrome"
+export SCREENSERVE="$HOME/sshfs/server-srv/http/kittykatt.us/served.kittykatt.us/screens"
+export MPD_HOST="lloth"
+export MPD_PORT="6600"
+
+export HISTFILE=~/.zsh_history
+export HISTSIZE=5012
+export SAVEHIST=$HISTSIZE

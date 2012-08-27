@@ -1,0 +1,8 @@
+#!/bin/bash
+
+c0="\e[0m"
+
+for i in {1..255}; do
+	c1="\e[38;5;$im"
+	printf "$c1$i"
+done

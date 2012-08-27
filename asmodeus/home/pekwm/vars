@@ -1,0 +1,7 @@
+# $TERMINAL="mrxvt -tr -shade 50 -xft -xftfn Monospace -xftsz 10 -ht +sb"
+# $TERMINAL_FULL="mrxvt -tr -shade 50 -xft -xftfn Monospace -xftsz 10 -ht +showmenu -fs +sb"
+# $TERMINAL="Terminal &"
+$TERMINAL="rxvt-unicode"
+$TERMINAL_FULL="Terminal --fullscreen &"
+$BROWSER="google-chrome"
+$FILEBROWSER="nautilus"

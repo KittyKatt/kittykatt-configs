@@ -1,0 +1,53 @@
+#!/bin/bash
+
+c0="\e[0m" # Reset Text
+bold="\e[1m" # Bold Text
+
+colorize () {
+	echo -ne "\033[38;5;$1m"
+}
+
+white=$(colorize "254")
+black=$(colorize "233")
+lred=$(colorize "167")
+red=$(colorize "124")
+dred=$(colorize "88")
+lgreen=$(colorize "41")
+green=$(colorize "34")
+dgreen=$(colorize "22")
+yellow=$(colorize "220")
+lblue=$(colorize "33")
+blue=$(colorize "27")
+dblue=$(colorize "21")
+lpurple=$(colorize "99")
+purple=$(colorize "57")
+dpurple=$(colorize "54")
+cyan=$(colorize "45")
+orange=$(colorize "202")
+brown=$(colorize "94")
+lgrey=$(colorize "245")
+grey=$(colorize "240")
+dgrey=$(colorize "237")
+
+
+echo -e "${white}My name is Brett Bohnenkamper. \t ${bold}white ${c0}"
+echo -e "${black}My name is Brett Bohnenkamper. \t ${bold}black ${c0}"
+echo -e "${dred}My name is Brett Bohnenkamper. \t ${bold}dred ${c0}"
+echo -e "${red}My name is Brett Bohnenkamper. \t ${bold}red ${c0}"
+echo -e "${lred}My name is Brett Bohnenkamper. \t ${bold}lred ${c0}"
+echo -e "${dgreen}My name is Brett Bohnenkamper. \t ${bold}dgreen ${c0}"
+echo -e "${green}My name is Brett Bohnenkamper. \t ${bold}green ${c0}"
+echo -e "${lgreen}My name is Brett Bohnenkamper. \t ${bold}lgreen ${c0}"
+echo -e "${yellow}My name is Brett Bohnenkamper. \t ${bold}yellow ${c0}"
+echo -e "${dblue}My name is Brett Bohnenkamper. \t ${bold}dblue ${c0}"
+echo -e "${blue}My name is Brett Bohnenkamper. \t ${bold}blue ${c0}"
+echo -e "${lblue}My name is Brett Bohnenkamper. \t ${bold}lblue ${c0}"
+echo -e "${dpurple}My name is Brett Bohnenkamper. \t ${bold}dpurple ${c0}"
+echo -e "${purple}My name is Brett Bohnenkamper. \t ${bold}purple ${c0}"
+echo -e "${lpurple}My name is Brett Bohnenkamper. \t ${bold}lpurple ${c0}"
+echo -e "${cyan}My name is Brett Bohnenkamper. \t ${bold}cyan ${c0}"
+echo -e "${orange}My name is Brett Bohnenkamper. \t ${bold}orange ${c0}"
+echo -e "${brown}My name is Brett Bohnenkamper. \t ${bold}brown ${c0}"
+echo -e "${dgrey}My name is Brett Bohnenkamper. \t ${bold}dgrey ${c0}"
+echo -e "${grey}My name is Brett Bohnenkamper. \t ${bold}grey ${c0}"
+echo -e "${lgrey}My name is Brett Bohnenkamper. \t ${bold}lgrey ${c0}"

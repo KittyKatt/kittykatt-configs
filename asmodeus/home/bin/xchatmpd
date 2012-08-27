@@ -1,0 +1,64 @@
+#!/bin/bash
+
+bold="\x02"
+
+color1="\x032"
+color2="\x030"
+color3="\x035"
+color4="\x033"
+
+#if [ "$MPD_HOST" ]; then mpdhost="$MPD_HOST"; else mpdhost="localhost"; fi
+#if [ "$MPD_PORT" ]; then mpdport="$MPD_PORT"; else mpdport="6600"; fi
+mpdhost="lloth"
+mpdport="6600"
+
+MPD_TCP="/dev/tcp/$mpdhost/$mpdport"
+
+function mpd_sndcommmand() {
+        # $1 command
+        exec 5<> $MPD_TCP 2>/dev/null
+        [[ $? -gt 0 ]] && return 1
+        echo $1 >&5
+        echo "close" >&5
+        tmp=$(cat <&5)
+        exec 5>&-
+        _ret=$(head -n -1 <<< "$tmp" | tail -n +2)
+        return 0
+}
+
+function mpd_getinfo() {
+	mpd_sndcommmand currentsong
+	[[ $? -gt 0 ]] && return 1
+	_tmp=$_ret
+	mpdTitle=$(grep "^Title: " <<< "$_tmp" 2>/dev/null | sed "s/Title: //")
+	mpdArtist=$(grep "^Artist: " <<< "$_tmp" 2>/dev/null | sed "s/Artist: //")
+	mpdAlbum=$(grep "^Album: " <<< "$_tmp" 2>/dev/null | sed "s/Album: //")
+	_songtime=$(grep "^Time: " <<< "$_tmp" 2>/dev/null | sed "s/Time: //" | cut -f 1 -d :)
+	(( _mm=$_songtime / 60 ))
+	[[ ${#_mm} -eq 1 ]] && _mm="0$_mm"
+	(( _ss=$_songtime - $_mm * 60 ))
+	[[ ${#_ss} -eq 1 ]] && _ss="0$_ss"
+	mpdLength="$_mm:$_ss"
+	mpdDate=$(grep "^Date: " <<< "$_tmp" 2>/dev/null | sed "s/Date: //")
+	mpdGenre=$(grep "^Genre: " <<< "$_tmp" 2>/dev/null | sed "s/Genre: //")
+	mpd_sndcommmand "status"
+	_tmp=$_ret
+	mpdSongID=$(grep "^song: " <<< "$_tmp" 2>/dev/null | sed "s/song: //")
+	mpdPlaylistL=$(grep "^playlistlength: " <<< "$_tmp" 2>/dev/null | sed "s/playlistlength: //")
+	_nowtime=$(grep "^time: " <<< "$_tmp" 2>/dev/null | sed "s/time: //" | awk -F":" '{print $1}')
+	(( _mm=$_nowtime / 60 ))
+	[[ ${#_mm} -eq 1 ]] && _mm="0$_mm"
+	(( _ss=$_nowtime - $_mm * 60 ))
+	[[ ${#_ss} -eq 1 ]] && _ss="0$_ss"
+	mpdNowTime="$_mm:$_ss"
+	mpdBitrate=$(grep "^bitrate: " <<< "$_tmp" 2>/dev/null | sed "s/bitrate: //")
+}
+
+mpd_getinfo
+
+
+if [ "$1" == "-s" ]; then
+	echo -ne "${bold}♫ ♪ ${color1}[${color2} KattStream ${color1}]${color2} : ${color1}${mpdTitle}${color2} by ${color1}${mpdArtist}${color2} from ${color1}${mpdAlbum}${color2} [ ${color4}Live${color2} ] ♫ ♪${bold}"
+else
+	echo -ne "$bold$color3($color2 ${mpdSongID}/${mpdPlaylistL} $color3) $color1[$color2 ${mpdTitle} $color1] :: [$color2 ${mpdArtist} $color1] :: [$color2 ${mpdAlbum} $color1]  :: [$color2 $mpdGenre $color1-$color2 $mpdDate $color1] :: [$color2 $mpdNowTime / $mpdLength ($mpdBitrate kbps)$color1 ] $color3[ "$color1"Can haz Bash MPD?$color3 ]$bold"
+fi
