@@ -1,0 +1,59 @@
+# mpc next
+"mpc next"
+  XF86AudioNext
+
+# mpc previous
+"mpc prev"
+  XF86AudioPrev
+
+
+# mpc play/pause
+# "mpdnotify-tcp status"
+"mpdlyrics-zen"
+  XF86AudioPlay
+
+# Shutdown Dialog
+"shutdown-dialog.py"
+  XF86Sleep
+
+# Start Browser
+"chromium"
+  XF86HomePage
+
+
+# Mute IntelOnboard SoundCard
+"pulsevolctl -m"
+  XF86AudioMute
+
+# Raise Volume (IntelOnboard)
+"pulsevolctl -u"
+  XF86AudioRaiseVolume
+
+# Lower Volume (IntelOnboard)
+"pulsevolctl -d"
+  XF86AudioLowerVolume
+
+# Mute CMI8788 SoundCard
+"pulsevolctl -m cmi8788"
+    m:0x50 + c:121
+    Mod2+Mod4 + XF86AudioMute
+
+# Raise Volume (CMI8788)
+"pulsevolctl -u cmi8788"
+    m:0x50 + c:123
+    Mod2+Mod4 + XF86AudioRaiseVolume
+
+# Lower Volume (CMI8788)
+"pulsevolctl -d cmi8788"
+    m:0x50 + c:122
+    Mod2+Mod4 + XF86AudioLowerVolume
+
+# Start / Find 
+"/home/kittykatt/bin/email_startfind.sh"
+    XF86Mail
+
+
+
+"sllclear"
+    m:0x50 + c:78
+    Mod2+Mod4 + Scroll_Lock

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+conky &
+conky -c $HOME/.conkyNPrc &
+conky -c $HOME/.conkyrcweather &
+conky -c $HOME/.conkyleds

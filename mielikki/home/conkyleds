@@ -1,0 +1,40 @@
+use_xft yes
+xftfont Droid Sans:style=Bold:size=8
+
+update_interval 1
+total_run_times 0
+double_buffer yes
+text_buffer_size 256
+
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+minimum_size 100 50
+# maximum_width 182
+maximum_width 250
+
+default_color cccccc
+draw_shades no
+
+color0 white
+color1 3465A4
+color2 white
+color3 grey
+color4 red
+color5 green
+
+alignment top_left
+gap_x 375
+gap_y -5
+
+net_avg_samples 2
+
+override_utf8_locale yes
+
+imlib_cache_size 0
+
+TEXT
+
+${execp sh ~/bin/ledstate}

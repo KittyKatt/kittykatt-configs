@@ -1,0 +1,48 @@
+! tangoesque scheme
+*background:  #222222
+*foreground:  #aaaaaa
+! Black
+*color0:      #000000
+*color8:      #555753
+! Red
+*color1:      #ff005f
+*color9:     #ff6767
+! Green
+*color2:       #36b217
+*color10:      #00d56a
+! *color2:      #7ddb18
+! *color10:     #95e045
+! Yellow
+*color3:      #eab93d
+*color11:     #ffc123
+! Blue
+*color4:      #204a87
+*color12:     #3465a4
+! Mangenta
+*color5:      #9E6FFE
+*color13:     #9E6FFE
+! Cyan 
+*color6:      #89b6e2
+*color14:     #46a4ff
+! White
+*color7:      #cccccc
+*color15:     #ffffff
+
+
+
+
+! Old Colours
+
+! Old Mangenta
+! *color5:      #ce5c00
+! *color13:     #f57900
+
+! Old Green
+! *color2:      #93d44f
+! *color10:     #c8e7a8
+! *color2:      #7ddb18
+! *color10:     #95e045
+
+! Old Red
+! *color1:      #ff6565
+! *color9:      #ff8d8d

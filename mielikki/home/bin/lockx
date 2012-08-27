@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# ArcherSeven's xlock command and configuration file
+
+STARTCMD="purple-remote 'setstatus?status=away&message=xlock on. I'm away.' & xchat -e -c 'allserv away xlock on. I'm away.'&"
+ENDCMD="purple-remote 'setstatus?status=available&message=xlock killed. I'm here, most likely.' & xchat -e -c 'allserv back'& "
+LOCKDELAY=20
+DPMSOFFDELAY=450
+ECHOKEY=×
+MODE=scooter
+
+# MODES
+# atunnels
+# grav
+# laser
+# life
+# matrix
+# pacman
+# pyro
+# pyro2
+# rubik
+# scooter
+# solitaire
+# star
+# swarm
+# tetris
+# worm
+
+if [ "$1" = -b ]
+then DPMSOFFDELAY=30
+MODE=blank
+fi
+
+xlock -mode $MODE -echokeys -echokey $ECHOKEY -dpmsoff $DPMSOFFDELAY -lockdelay $LOCKDELAY -startCmd "$STARTCMD" -endCmd "$ENDCMD" 

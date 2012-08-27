@@ -1,0 +1,49 @@
+#!/bin/bash
+
+	if [ "$2" == "cmi8788" ]; then
+		# mypulsesink="alsa_output.pci-0000_06_04.0.analog-surround-71"
+		# mypulsesink="alsa_output.pci-0000_05_04.0.analog-surround-71"
+		# mypulsesink="alsa_output.pci-0000_05_04.0.analog-surround-71"
+		# mypulsesink="alsa_output.pci-0000_06_02.0.analog-stereo"
+		#mypulsesink="alsa_output.pci-0000_06_02.0.analog-surround-51"
+		mypulsesink="alsa_output.pci-0000_06_04.0.analog-surround-51"
+	elif [ "$2" == "ca106" ]; then 
+		mypulsesink="alsa_output.pci-0000_06_04.0.analog-stereo"
+	else
+		#mypulsesink="alsa_output.pci-0000_00_1b.0.analog-surround-51"
+                #mypulsesink="alsa_output.pci-0000_00_1b.0.analog-surround-50"
+		mypulsesink="alsa_output.pci-0000_00_1b.0.analog-surround-51"
+	fi
+
+	while getopts ":udm" flags; do
+		case $flags in
+			u)
+			  A=$(pacmd dump | grep "set-sink-volume $mypulsesink" | cut -d " " -f 3)
+			  B=$((A + 0x00650))
+			  if [ $(($B)) -gt $((0x10000)) ]; then
+			  	B=$((0x10000))
+			  fi
+			  pactl set-sink-volume $mypulsesink `printf "0x%X" $B`
+			;;
+
+			d)
+			  A=$(pacmd dump | grep "set-sink-volume $mypulsesink" | cut -d " " -f 3)
+			  B=$((A - 0x00650))
+			  if [ $(($B)) -lt $((0x00000)) ]; then
+			  	B=$((0x00000))
+			  fi
+			  pactl set-sink-volume $mypulsesink `printf "0x%X" $B`
+			;;
+
+			m)
+			  A=$(pacmd dump | grep "set-sink-mute $mypulsesink" | cut -d " " -f 3)
+			  if [ "$A" == "no" ]; then
+				pactl set-sink-mute $mypulsesink yes
+			  else
+			  	pactl set-sink-mute $mypulsesink no
+			  fi
+			;;
+
+			*) exit 0;;
+		esac
+	done

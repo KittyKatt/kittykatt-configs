@@ -1,17 +1,37 @@
 Xcursor*theme:  OpenZone White
 
 ! terminal colors ------------------------------------------------------------
-#include "/home/kittykatt/.colours/tangoish"
-!#include "/home/kittykatt/.colours/dark"
-!#include "/home/kittykatt/.colours/low"
-!#include "/home/kittykatt/.colours/old"
-!#include "/home/kittykatt/.colours/soft"
-!#include "/home/kittykatt/.colours/washed"
+!#include "/home/kittykatt/.colours/arthur"
+!#include "/home/kittykatt/.colours/ashe"
+!#include "/home/kittykatt/.colours/babypuncher"
 !#include "/home/kittykatt/.colours/bright"
+!#include "/home/kittykatt/.colours/byte"
+!#include "/home/kittykatt/.colours/dark"
+!#include "/home/kittykatt/.colours/econ"
+!#include "/home/kittykatt/.colours/gnumatic"
+!#include "/home/kittykatt/.colours/jhvid"
+!#include "/home/kittykatt/.colours/k3ttc4r"
 !#include "/home/kittykatt/.colours/lich"
+!#include "/home/kittykatt/.colours/low"
+!#include "/home/kittykatt/.colours/mason.larobina"
+!#include "/home/kittykatt/.colours/new1"
+!#include "/home/kittykatt/.colours/new2"
+!#include "/home/kittykatt/.colours/nu"
+!#include "/home/kittykatt/.colours/old"
 !#include "/home/kittykatt/.colours/rab"
 !#include "/home/kittykatt/.colours/reasons"
+!#include "/home/kittykatt/.colours/sen"
+!#include "/home/kittykatt/.colours/sicp"
+!#include "/home/kittykatt/.colours/soft"
+#include "/home/kittykatt/.colours/KittyKatt"
+!#include "/home/kittykatt/.colours/new_katt"
+!#include "/home/kittykatt/.colours/Taters"
+!#include "/home/kittykatt/.colours/thayer"
+!#include "/home/kittykatt/.colours/tvale"
+!#include "/home/kittykatt/.colours/VCoolio"
+!#include "/home/kittykatt/.colours/washed"
 !#include "/home/kittykatt/.colours/zenburn"
+
 
 
 ! xscreensaver ---------------------------------------------------------------
@@ -45,56 +65,67 @@ xscreensaver.passwd.thermometer.width:       8
 xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
 
 ! Xcursor.theme: whiteglass
+
+
+
 ! rxvt-unicode ---------------------------------------------------------------
-URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher: /usr/bin/chromium
-URxvt.matcher.button: 1
-URxvt.matcher.rend.0: fg16 RS_Uline
+URxvt.perl-ext-common:		default,matcher
+URxvt.urlLauncher:		/usr/bin/chromium-dev
+URxvt.matcher.button:		1
+URxvt.matcher.rend.0:		fg16 RS_Uline
 
-URxvt.urgentOnBell: True
+URxvt.urgentOnBell:		True
 
-URxvt*meta8: false
-URxvt.keysym.C-Left: \033[1;5D
-URxvt.keysym.C-Right: \033[1;5C
+URxvt*meta8:			false
+URxvt.keysym.C-Left:		\033[1;5D
+URxvt.keysym.C-Right:		\033[1;5C
+!URxvt*keysym.Home:		\033[1~
+!URxvt*keysym.End:		\033[4~
 
-URxvt.geometry: 400x30 
-URxvt.externalBorder: 0
-URxvt.buffered: true
-URxvt.background: black
-URxvt.foreground: white
-URxvt.cursorColor: white
-urxvt*cursorBlink:      true
-URxvt.underlineColor: red
-!URxvt.font:xft:Inconsolata:pixelsize=12:antialias=true
-URxvt.font:xft:drift:pixelsize=12:antialias=true
+URxvt.geometry:			90x30
+URxvt.externalBorder:		0
+URxvt.buffered:			true
+URxvt.background:		black
+URxvt.foreground:		white
+URxvt.cursorColor:		white
+urxvt*cursorBlink:		true
+URxvt.underlineColor:		red
+!URxvt.font:			xft:Inconsolata:pixelsize=12:antialias=true
+URxvt.font:			xft:drift:pixelsize=12:antialias=true
+!URxvt.font:			xft:envy code r:pixelsize=12:antialias=true
+!URxvt.font:			xft:ohsnap:pixelsize=12:antialias=true
 !URxvt.font: 9x15
-urxvt*scrollTtyKeypress:  true
+urxvt*scrollTtyKeypress:	true
 !jump to bottom (prompt) when tty gets new lines
-urxvt*scrollWithBuffer:   false
+urxvt*scrollWithBuffer:		false
 !jump to bottom (prompt) on tty output
-urxvt*scrollTtyOutput:    false
+urxvt*scrollTtyOutput:		false
 !save n lines of scrollback
-urxvt*saveLines:          10000
+urxvt*saveLines:		10000
 !toggle scrollbar
-urxvt*scrollBar:          false
+urxvt*scrollBar:		false
 !scrollbar styles: rxvt, plain, next or xterm
-urxvt*scrollstyle:        plain
+urxvt*scrollstyle:		plain
 !scrollbar alignment
-urxvt*scrollBar_right:    true
-urxvt*title: Terminal
+urxvt*scrollBar_right:		true
+urxvt*title:			terminal
 !------------
 !True Transparency
 !------------
 !set to 32-bit for real transparency (compositing required (see xcompmgr)
-urxvt*depth:             32
-transparent=0000 opaque=ffff
-urxvt*background: rgba:1111/1111/1111/dddd
-!urxvt*background: rgba:1111/1111/1111/0000
+urxvt*depth:			32
+!transparent=0000 opaque=ffff
+urxvt*background:		rgba:1111/1111/1111/dddd
+!urxvt*background:		rgba:1111/1111/1111/0000
 
 !------------------
 !False tranparency
 !------------------
-!URxvt.transparent: true
-!URxvt.shading: 50 
+!URxvt.transparent:		true
+!URxvt.shading:			50
 
-Urxvt.secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
+! Enable Shitf-PageUp/Down in screen
+Urxvt.secondaryScroll:		true
+
+
+

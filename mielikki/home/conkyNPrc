@@ -1,0 +1,44 @@
+use_xft yes
+xftfont Liberation Sans:size=8
+
+update_interval 2
+total_run_times 0
+double_buffer yes
+text_buffer_size 2048
+
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+minimum_size 250 0
+# maximum_width 182
+maximum_width 250
+
+default_color cccccc
+draw_shades no
+
+color0 white
+color1 3465A4
+color2 white
+
+alignment bottom_left
+gap_x 25
+gap_y 30
+
+net_avg_samples 2
+
+override_utf8_locale yes
+
+imlib_cache_size 0
+
+TEXT
+# MPD
+
+${voffset 5}${font Liberation Sans:style=Bold:size=8}MPD $stippled_hr${font}
+${exec ~/.conky/conkyCover.sh}${image /tmp/conkyCover.png -s 75x55 -p 25,52}${voffset 4}${color0}${font Musicelements:size=18}z${font}${voffset -10}${goto 32}${font AvantGardeLTMedium:style=Bold:size=8}Status:${alignc}${offset 5}${color2}${mpd_status}${color}${alignr}${offset -5}${if_match "${mpd_random}" == "On"}${voffset -2}${color2}${font Pointers:size=12}m${font} ${color}${endif} ${if_match "${mpd_repeat}" == "On"}${offset -5}${voffset -2}${color2}${font Pointers:size=10}X${font} ${color}${endif}
+${voffset 6}${goto 110}${color 3465A4}${font AvantGardeLTMedium:style=Bold:size=7}${mpd_title}
+${goto 110}${color}${mpd_album}
+${goto 110}${color 3465A4}${mpd_artist}
+${goto 110}${color 3465A4}${font AvantGardeLTMedium:style=Bold:size=7}${mpd_elapsed}${color} / ${color 3465A4}${mpd_length}${color} - ${color 3465A4}${mpd_percent}%${color}${font}
+${goto 111}${mpd_bar 8,120}

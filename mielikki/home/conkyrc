@@ -21,6 +21,7 @@ draw_shades no
 color0 white
 color1 3465A4
 color2 white
+color3 grey
 
 alignment top_left
 gap_x 25
@@ -39,10 +40,10 @@ ${font Droid Sans:style=Bold:size=8}SYSTEM $stippled_hr${font}
 ${color0}${font Poky:size=15}S${font}${color}${goto 32}${voffset -8}${goto 32}Kernel:  ${alignr}${color2}${kernel} ($machine)${color}
 ${goto 32}Uptime: ${alignr}${color2}${uptime}${color}
 # CPU
-${offset 1}${color0}${font Poky:size=16}P${font}${offset -19}${voffset 9}${cpubar cpu0 4,18}${color}${voffset -15}${goto 32}CPU1: ${font DejaVu Sans Mono:style=Bold:size=8}${color1}${cpu cpu1}%${font} ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 sensors | grep 'temp1' | cut -c15-16}°C${color}${font}  ${color2}${cpugraph cpu1 8,60 204A87 3465A4}${color}
-${goto 32}CPU2: ${font DejaVu Sans Mono:style=Bold:size=8}${color1}${cpu cpu2}%${font} ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 sensors | grep 'temp1' | cut -c15-16}°C${color}${font}  ${color2}${cpugraph cpu2 8,60 204A87 3465A4}${color}
-${goto 32}CPU3: ${font DejaVu Sans Mono:style=Bold:size=8}${color1}${cpu cpu3}%${font} ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 sensors | grep 'temp1' | cut -c15-16}°C${color}${font}  ${color2}${cpugraph cpu3 8,60 204A87 3465A4}${color}
-${goto 32}CPU4: ${font DejaVu Sans Mono:style=Bold:size=8}${color1}${cpu cpu4}%${font} ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 sensors | grep 'temp1' | cut -c15-16}°C${color}${font}  ${color2}${cpugraph cpu4 8,60 204A87 3465A4}${color}
+${offset 1}${color0}${font Poky:size=16}P${font}${offset -19}${voffset 9}${cpubar cpu0 4,18}${color}${voffset -15}${goto 32}CPU1: ${font DejaVu Sans Mono:style=Bold:size=8}${color1}${cpu cpu1}%${font} ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 sensors | grep 'Core 0' | cut -c16-17}°C${color}${font}  ${color2}${cpugraph cpu1 8,60 204A87 3465A4}${color}
+${goto 32}CPU2: ${font DejaVu Sans Mono:style=Bold:size=8}${color1}${cpu cpu2}%${font} ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 sensors | grep 'Core 1' | cut -c16-17}°C${color}${font}  ${color2}${cpugraph cpu2 8,60 204A87 3465A4}${color}
+${goto 32}CPU3: ${font DejaVu Sans Mono:style=Bold:size=8}${color1}${cpu cpu3}%${font} ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 sensors | grep 'Core 2' | cut -c16-17}°C${color}${font}  ${color2}${cpugraph cpu3 8,60 204A87 3465A4}${color}
+${goto 32}CPU4: ${font DejaVu Sans Mono:style=Bold:size=8}${color1}${cpu cpu4}%${font} ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 sensors | grep 'Core 3' | cut -c16-17}°C${color}${font}  ${color2}${cpugraph cpu4 8,60 204A87 3465A4}${color}
 # Memory
 ${voffset 4}${color0}${font Poky:size=16}M${font}${color}${goto 32}${voffset -7}RAM: ${font Droid Mono:style=Bold:size=8}${color1}${memperc}%${color}${font}  ${alignr} ${color2}${membar 8,60}${color}
 ${offset 1}${voffset 2}${color2}${membar 4,18}${color}${goto 32}${voffset -2}F: ${color2}${memeasyfree}${color} U: ${color2}${mem}${color}
@@ -50,13 +51,14 @@ ${offset 1}${voffset 2}${color2}${membar 4,18}${color}${goto 32}${voffset -2}F: 
 ${voffset 2}${color0}${font Poky:size=14}s${font}${color}${voffset -8}${goto 32}SWAP: ${font Droid Mono:style=Bold:size=8}${color1}${swapperc}%${color}${font} ${alignr} ${color2}${swapbar 8,60}${color}
 ${voffset 4}${offset 1}${color2}${swapbar 4,18}${color}${voffset -4}${goto 32}F: ${color2}$swapmax${color} U: ${color2}$swap${color}
 # Temps
-${offset 6}${voffset 6}${color0}${font Weather:size=22}y${font}${color}${voffset -13}${goto 32}Temperature (MB):  ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 sensors | grep 'temp2' | cut -c15-16}°C ${color}${font}
-${goto 32}Temperature (GPU):  ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 sensors | grep 'temp3' | cut -c15-16}°C ${color}${font}
+${offset 6}${voffset 8}${color0}${font Weather:size=22}y${font}${color}${voffset -15}${goto 32}Temperature (MB):  ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 sensors | grep 'temp2' | head -1 | cut -c16-17}°C ${color}${font}
+${goto 32}Temperature (GPU0):  ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 nvidia-settings -q [gpu:0]/GPUCoreTemp | grep "Attribute" | sed -e "s/.*: //g" -e "s/\.//g"}°C ${color}${font}
+${goto 32}Temperature (GPU1):  ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${execi 30 nvidia-settings -q [gpu:1]/GPUCoreTemp | grep "Attribute" | sed -e "s/.*: //g" -e "s/\.//g"}°C ${color}${font}
 # Fans
-${voffset 7}${color0}${font CircleThings:size=15}L${font}${color}${voffset -5}${goto 32}Fan 1 (CPU_FAN): ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${hwmon 0 fan 1} RPM${color}${font}
-${goto 32}Fan 2 (SYS_FAN1): ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${hwmon 0 fan 2} RPM${color}${font}
-${goto 32}Fan 3 (PWR_FAN): ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${hwmon 0 fan 3} RPM${color}${font}
-${goto 32}Fan 4 (SYS_FAN2): ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${hwmon 0 fan 4} RPM${color}${font}
+#${voffset 7}${color0}${font CircleThings:size=15}L${font}${color}${voffset -5}${goto 32}Fan 1 (CPU_FAN): ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${hwmon 1 fan 1} RPM${color}${font}
+#${goto 32}Fan 2 (SYS_FAN1): ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${hwmon 1 fan 2} RPM${color}${font}
+#${goto 32}Fan 3 (PWR_FAN): ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${hwmon 1 fan 3} RPM${color}${font}
+#${goto 32}Fan 4 (SYS_FAN2): ${alignr}${font DejaVu Sans Mono:style=Bold:size=8}${color1}${hwmon 1 fan 4} RPM${color}${font}
 # Repos
 ${voffset 6}${color0}${font OpenLogos:size=16}Q${font}${color}${goto 32}${voffset -11}Repositories: ${font DejaVu Sans Mono:style=Bold:size=8}${execpi 3600 paconky ~/.conky/pacman/repos.paconky}${font}
 ${goto 32}AUR Updates: ${font DejaVu Sans Mono:style=Bold:size=8}${execpi 3600 paconky ~/.conky/pacman/aur.paconky}${font}
@@ -76,11 +78,14 @@ ${goto 32}Total: ${color2}${totaldown eth0}${color}
 ${voffset -2}${color0}${font VariShapes Solid:size=14}d${font}${goto 32}${voffset -5}Connects: ${font DejaVu Sans Mono:style=Bold:size=8}${color1}${tcp_portmon 1 65535 count}${color} ${alignr}(In: ${color1}${tcp_portmon 1 32767 count}${color} / Out: ${color1}${tcp_portmon 32768 61000 count}${color})${font}
 # File Systems Monitor
 ${voffset 8}${font Droid Sans:style=Bold:size=8}FILE SYSTEMS $stippled_hr${font}
-  ${voffset 4}${color0}${font Weather:size=15}y${font}${color}${voffset -2}${goto 32}Temperature:  ${font Droid Sans:style=Bold:size=8}${color1}${execi 120 sudo hddtemp /dev/sda -n --unit=C}°C${color}${font}${alignr}${color2}/dev/sda${color}${font}
+  ${voffset 4}${color0}${font Weather:size=15}y${font}${color}${voffset -2}${goto 32}Temperature:  ${font Droid Sans:style=Bold:size=8}${color1}${hddtemp /dev/sda}°C${color}${font}${alignr}${color2}/dev/sda${color}${font}
+  ${voffset 4}${color0}${font Weather:size=15}y${font}${color}${voffset -2}${goto 32}Temperature:  ${font Droid Sans:style=Bold:size=8}${color1}${hddtemp /dev/sdb}°C${color}${font}${alignr}${color2}/dev/sdb${color}${font}
 ${execpi 1200 /home/kittykatt/.conky/ismount.sh}
 # Calendar
 ${voffset 8}${font Droid Sans:style=Bold:size=8}DATE${font}  $stippled_hr
 ${voffset -12}${goto 28}${font Arial Black:size=38}${color2}${time %H}${color}${font}${voffset -28}   ${font Droid Sans:style=Bold:size=11}${color2}${time :%M}${time :%S}${color}${font}
 ${voffset -3}${goto 100}${font Droid Sans:style=Bold:size=8}${color2}${time %A}${color}${font}
 ${voffset -1}${goto 100}${font Droid Sans:style=Bold:size=8}${color2}${time %d %B %Y}${color}${font}
-${voffset 4}${color0}${font Poky:size=15}d${font}${color}${voffset -5}${font Liberation Mono:style=bold:size=10}${alignc}${color White}${execpi 600 cal -m | sed -e 's|'`date +%d`'|\$\{color #3465A4}'`date +%d`'\$\{color White}|'}${font}
+#${voffset 4}${color0}${font Poky:size=15}d${font}${color}${voffset -5}${font Liberation Mono:normal:size=10}${goto 50}${color White}${execpi 600 cal | sed -e 's|'`date +%d`'|\$\{color1\}'`date +%d`'\$\{color White}|'}${font}
+#${voffset 4}${color0}${font Poky:size=15}d${font}${color}${voffset -5}${font Liberation Mono:style=Bold:size=10}${alignc}${execp $HOME/.conky/calendar.sh}${font}
+${voffset 4}${color0}${font Poky:size=15}d${font}${color}${voffset -5}${font Liberation Mono:normal:size=10}${goto 50}${color White}${execpi 600 DJS=`date +%_d`; cal | sed s/"\(^\|[^0-9]\)$DJS"'\b'/'\1${color1}'"$DJS"'$color'/}${font}

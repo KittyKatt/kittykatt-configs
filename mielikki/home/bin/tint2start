@@ -1,0 +1,4 @@
+#!/bin/bash
+
+tint2 -c /home/kittykatt/.config/tint2/tint2rc1.tint2rc &
+tint2 -c /home/kittykatt/.config/tint2/tint2rc2.tint2rc &
