@@ -1,7 +1,7 @@
 #!/bin/bash
 
-baseurl="http://served.kittykatt.us/screens"
-hostdir="$HOME/sshfs/lloth-srv/http/kittykatt.us/served.kittykatt.us/screens"
+baseurl="http://screens.kittykatt.us"
+hostdir="$HOME/sshfs/lloth-srv/http/kittykatt.us/screens.kittykatt.us"
 mydir="$HOME/Pictures/Screenshots"
 shotfile=$(echo "screenshot-`date +'%Y-%m-%d_%H-%M-%S'`.png")
 fileloc="$mydir/$shotfile"
@@ -12,6 +12,7 @@ echo ">>> Shot taken...uploading..."
 
 cp "$fileloc" $hostdir/
 
+echo ">>> Local screenshot location: $fileloc"
 echo ">>> Your screenshot can be viewed at $baseurl/$shotfile"
 
 exit 0
