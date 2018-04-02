@@ -1,3 +1,5 @@
+# THIS REPOSITORY IS DEPRECATED AND WILL NO LONGER BE UPDATED. Please use https://github.com/KittyKatt/configs instead.
+
 #kittykatt-configs - KittyKatt's Configuration Files
 
 #Description
